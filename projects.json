@@ -1,0 +1,1270 @@
+{
+ "ATLAS_v2": {
+  "ports": {
+   "55100": [
+    {
+     "packetsize": 1456,
+     "packetsource": "mainarray",
+     "packettype": "acoustic",
+     "nPckt": 160,
+     "nNode": 29,
+     "nSamp": 80,
+     "nChann": 9
+    }
+   ],
+   "55200": [
+    {
+     "packetsize": 1456,
+     "packetsource": "lrarray",
+     "packettype": "acoustic",
+     "nPckt": 160,
+     "nNode": 16,
+     "nSamp": 80,
+     "nChann": 9
+    }
+   ],
+   "55102": [
+    {
+     "packetsize": 37,
+     "ip": [
+      "3236430114",
+      "3236430115",
+      "3236430142"
+     ],
+     "packetsource": "mainarray",
+     "packettype": "depth"
+    },
+    {
+     "packetsize": 37,
+     "ip": [
+      "3236430111",
+      "3236430112"
+     ],
+     "packetsource": "mainarray",
+     "packettype": "depth_heading_roll"
+    }
+   ],
+   "55202": [
+    {
+     "packetsize": 37,
+     "packetsource": "lrarray",
+     "packettype": "depth_heading_roll"
+    }
+   ],
+   "55103": [
+    {
+     "packetsize": 1456,
+     "packetsource": "mainarray",
+     "packettype": "accelerometer"
+    }
+   ],
+   "53037": [
+    {
+     "packetsize": 392,
+     "packetsource": "sonarconfig",
+     "packettype": "esi"
+    },
+    {
+     "packetsize": 264,
+     "packetsource": "sonarconfig",
+     "packettype": "active_transaction"
+    }
+   ],
+   "60000": [
+    {
+     "packetsize": 392,
+     "packetsource": "sonarconfig",
+     "packettype": "esi"
+    }
+   ]
+  },
+  "packets": {
+   "metaheader": {
+    "fields": {
+     "Header": {
+      "datatype": "unsigned long",
+      "endianness": "little"
+     },
+     "Subversion": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "Version": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "SequenceNumber": {
+      "datatype": "unsigned long",
+      "endianness": "little"
+     },
+     "DestinationIP": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "SourceIP": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "DestUDPPort": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "Flag": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "Packetsize": {
+      "datatype": "unsigned long",
+      "endianness": "little"
+     },
+     "spare1": {
+      "datatype": "unsigned long",
+      "endianness": "little"
+     },
+     "Timestamp": {
+      "datatype": "unsigned long long",
+      "endianness": "little"
+     },
+     "sourceUDPport": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "EthInterface": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "spare2": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "IPCast": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     }
+    }
+   },
+   "acoustic": {
+    "fields": {
+     "SequenceNumber": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare1": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "NodeNum": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "spare2": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 10
+     },
+     "Value": {
+      "datatype": "unsigned short",
+      "endianness": "big",
+      "size": 720
+     }
+    }
+   },
+   "accelerometer": {
+    "fields": {
+     "SequenceNumber": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare1": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "NodeNum": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "spare2": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 10
+     },
+     "Value": {
+      "datatype": "unsigned short",
+      "endianness": "big",
+      "size": 720
+     }
+    }
+   },
+   "esi": {
+    "fields": {
+     "SonarHeader": {
+      "datatype": "unsigned char",
+      "endianness": "little",
+      "size": 128
+     },
+     "DateTime": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 6
+     },
+     "CourseGPS": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "SpeedGPS": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "Latitude": {
+      "datatype": "float",
+      "endianness": "big",
+      "size": 4
+     },
+     "Longitude": {
+      "datatype": "float",
+      "endianness": "big",
+      "size": 4
+     },
+     "GPSDataValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "HeadingGyro": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "GyroDataValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare1": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 3
+     },
+     "SpeedLog": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "LogDataValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare2": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 3
+     },
+     "DepthEchosounder": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "EchoSounderDataValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare3": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 3
+     },
+     "ArrayDepth": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "ArrayCourse": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "spare4": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 4
+     },
+     "PaidofLength": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "POLValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "CableTension": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "CTValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "SWHSHealthWord": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "ArrayDepthMangmtStatusWord": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "ArrayDepthRef": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "ClearenceRef": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "RadarLinkOK": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "RadarData": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 9
+     },
+     "spare5": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 10
+     }
+    }
+   },
+   "active_transaction": {
+    "fields": {
+     "SonarHeader": {
+      "datatype": "unsigned char",
+      "endianness": "little",
+      "size": 128
+     },
+     "PulseType": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "Frequency": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "BandWidth": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "PulseLength": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "SourceLevel": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "RangeScale": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "VarFlBkEnable": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "TxMode": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "ManTx": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "NormalProc": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "LrProc": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "Despoke": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "DispMode": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "FlyBackRng": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "Sensitivity": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "MStatMode": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "PgtoPgIntgn": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "SteerDir": {
+      "datatype": "int",
+      "endianness": "big"
+     },
+     "Beamformer": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "DeclineFactor": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "ArrayShading": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "SNC": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "CalbModeStatus": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "FilterReady": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "PASrcLvl": {
+      "datatype": "float",
+      "endianness": "big",
+      "size": 10
+     }
+    }
+   },
+   "depth": {
+    "fields": {
+     "SequenceNumber": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare1": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 3
+     },
+     "NodeNum": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "spare2": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 8
+     },
+     "DepthData": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "spare3": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 20
+     }
+    }
+   },
+   "depth_heading_roll": {
+    "fields": {
+     "SequenceNumber": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare1": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 3
+     },
+     "NodeNum": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "DepthData": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "spare2": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 8
+     },
+     "Roll": {
+      "datatype": "unsigned short",
+      "endianness": "big"
+     },
+     "spare3": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 6
+     },
+     "Azimuth": {
+      "datatype": "unsigned short",
+      "endianness": "big"
+     },
+     "spare4": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 10
+     }
+    }
+   }
+  },
+  "parameters": {
+   "depth": [
+    "DepthData"
+   ],
+   "depth_heading_roll": [
+    "DepthData",
+    "Roll",
+    "Azimuth"
+   ],
+   "esi": [
+    "DateTime",
+    "CourseGPS",
+    "SpeedGPS",
+    "Latitude",
+    "Longitude",
+    "GPSDataValid",
+    "HeadingGyro",
+    "GyroDataValid",
+    "SpeedLog",
+    "LogDataValid",
+    "DepthEchosounder",
+    "EchoSounderDataValid",
+    "ArrayDepth",
+    "ArrayCourse",
+    "PaidofLength",
+    "POLValid",
+    "CableTension",
+    "CTValid",
+    "SWHSHealthWord",
+    "ArrayDepthMangmtStatusWord",
+    "ArrayDepthRef",
+    "ClearenceRef",
+    "RadarLinkOK"
+   ],
+   "active_transaction": [
+    "PulseType",
+    "Frequency",
+    "BandWidth",
+    "PulseLength",
+    "SourceLevel",
+    "RangeScale",
+    "VarFlBkEnable",
+    "TxMode",
+    "ManTx",
+    "NormalProc",
+    "LrProc",
+    "Despoke",
+    "DispMode",
+    "FlyBackRng",
+    "Sensitivity",
+    "MStatMode",
+    "PgtoPgIntgn",
+    "SteerDir",
+    "Beamformer",
+    "DeclineFactor",
+    "ArrayShading",
+    "SNC",
+    "CalbModeStatus",
+    "FilterReady"
+   ]
+  }
+ },
+ "ATLAS_v1": {
+  "ports": {
+   "55100": [
+    {
+     "packetsize": 1456,
+     "packetsource": "mainarray",
+     "packettype": "acoustic",
+     "nPckt": 160,
+     "nNode": 16,
+     "nSamp": 80,
+     "nChann": 9
+    }
+   ],
+   "55200": [
+    {
+     "packetsize": 1456,
+     "packetsource": "lrarray",
+     "packettype": "acoustic",
+     "nPckt": 160,
+     "nNode": 16,
+     "nSamp": 80,
+     "nChann": 9
+    }
+   ],
+   "55101": [
+    {
+     "packetsize": 37,
+     "packetsource": "mainarray",
+     "packettype": "heading_roll"
+    }
+   ],
+   "55102": [
+    {
+     "packetsize": 37,
+     "packetsource": "mainarray",
+     "packettype": "depth"
+    }
+   ],
+   "55201": [
+    {
+     "packetsize": 37,
+     "packetsource": "lrarray",
+     "packettype": "heading_roll"
+    }
+   ],
+   "55202": [
+    {
+     "packetsize": 37,
+     "packetsource": "lrarray",
+     "packettype": "depth"
+    }
+   ],
+   "55103": [
+    {
+     "packetsize": 1456,
+     "packetsource": "mainarray",
+     "packettype": "accelerometer"
+    }
+   ],
+   "53037": [
+    {
+     "packetsize": 392,
+     "packetsource": "sonarconfig",
+     "packettype": "esi"
+    },
+    {
+     "packetsize": 264,
+     "packetsource": "sonarconfig",
+     "packettype": "active_transaction"
+    }
+   ]
+  },
+  "packets": {
+   "metaheader": {
+    "fields": {
+     "Header": {
+      "datatype": "unsigned long",
+      "endianness": "little"
+     },
+     "Subversion": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "Version": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "SequenceNumber": {
+      "datatype": "unsigned long",
+      "endianness": "little"
+     },
+     "DestinationIP": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "SourceIP": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "DestUDPPort": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "Flag": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "Packetsize": {
+      "datatype": "unsigned long",
+      "endianness": "little"
+     },
+     "Timestamp": {
+      "datatype": "unsigned long long",
+      "endianness": "little"
+     },
+     "sourceUDPport": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "EthInterface": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "spare1": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     },
+     "IPCast": {
+      "datatype": "unsigned short",
+      "endianness": "little"
+     }
+    }
+   },
+   "acoustic": {
+    "fields": {
+     "SequenceNumber": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare1": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "NodeNum": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "spare2": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 10
+     },
+     "Value": {
+      "datatype": "unsigned short",
+      "endianness": "big",
+      "size": 720
+     }
+    }
+   },
+   "accelerometer": {
+    "fields": {
+     "SequenceNumber": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare1": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "NodeNum": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "spare2": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 10
+     },
+     "Value": {
+      "datatype": "unsigned short",
+      "endianness": "big",
+      "size": 720
+     }
+    }
+   },
+   "esi": {
+    "fields": {
+     "SonarHeader": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 128
+     },
+     "DateTime": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 6
+     },
+     "CourseGPS": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "SpeedGPS": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "Latitude": {
+      "datatype": "float",
+      "endianness": "big",
+      "size": 4
+     },
+     "Longitude": {
+      "datatype": "float",
+      "endianness": "big",
+      "size": 4
+     },
+     "GPSDataValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "HeadingGyro": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "GyroDataValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare1": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 3
+     },
+     "SpeedLog": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "LogDataValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare2": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 3
+     },
+     "DepthEchosounder": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "EchoSounderDataValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare3": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 3
+     },
+     "ArrayDepth": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "ArrayCourse": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "spare4": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 4
+     },
+     "PaidofLength": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "POLValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "CableTension": {
+      "datatype": "float",
+      "endianness": "big"
+     },
+     "CTValid": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "SWHSHealthWord": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "ArrayDepthMangmtStatusWord": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "ArrayDepthRef": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "ClearenceRef": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "RadarLinkOK": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "RadarData": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 9
+     },
+     "spare5": {
+      "datatype": "unsigned long",
+      "endianness": "big",
+      "size": 10
+     }
+    }
+   },
+   "active_transaction": {
+    "fields": {
+     "SonarHeader": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 128
+     },
+     "PulseType": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "Frequency": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "BandWidth": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "PulseLength": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "SourceLevel": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "RangeScale": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "VarFlBkEnable": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "TxMode": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "ManTx": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "NormalProc": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "LrProc": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "Despoke": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "DispMode": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "FlyBackRng": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "Sensitivity": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "MStatMode": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "PgtoPgIntgn": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "SteerDir": {
+      "datatype": "int",
+      "endianness": "big"
+     },
+     "Beamformer": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "DeclineFactor": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "ArrayShading": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "SNC": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "CalbModeStatus": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "FilterReady": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "PASrcLvl": {
+      "datatype": "float",
+      "endianness": "big",
+      "size": 10
+     }
+    }
+   },
+   "depth": {
+    "fields": {
+     "SequenceNumber": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare1": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 3
+     },
+     "NodeNum": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "spare2": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 8
+     },
+     "DepthData": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "spare3": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 20
+     }
+    }
+   },
+   "heading_roll": {
+    "fields": {
+     "SequenceNumber": {
+      "datatype": "unsigned long",
+      "endianness": "big"
+     },
+     "spare1": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 3
+     },
+     "NodeNum": {
+      "datatype": "unsigned char",
+      "endianness": "big"
+     },
+     "spare2": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 9
+     },
+     "Roll": {
+      "datatype": "unsigned short",
+      "endianness": "big"
+     },
+     "spare3": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 6
+     },
+     "Azimuth": {
+      "datatype": "unsigned short",
+      "endianness": "big"
+     },
+     "spare4": {
+      "datatype": "unsigned char",
+      "endianness": "big",
+      "size": 10
+     }
+    }
+   }
+  },
+  "parameters": {
+   "esi": [
+    "DateTime",
+    "CourseGPS",
+    "SpeedGPS",
+    "Latitude",
+    "Longitude",
+    "GPSDataValid",
+    "HeadingGyro",
+    "GyroDataValid",
+    "SpeedLog",
+    "LogDataValid",
+    "DepthEchosounder",
+    "EchoSounderDataValid",
+    "ArrayDepth",
+    "ArrayCourse",
+    "PaidofLength",
+    "POLValid",
+    "CableTension",
+    "CTValid",
+    "SWHSHealthWord",
+    "ArrayDepthMangmtStatusWord",
+    "ArrayDepthRef",
+    "ClearenceRef",
+    "RadarLinkOK"
+   ],
+   "active_transaction": [
+    "PulseType",
+    "Frequency",
+    "BandWidth",
+    "PulseLength",
+    "SourceLevel",
+    "RangeScale",
+    "VarFlBkEnable",
+    "TxMode",
+    "ManTx",
+    "NormalProc",
+    "LrProc",
+    "Despoke",
+    "DispMode",
+    "FlyBackRng",
+    "Sensitivity",
+    "MStatMode",
+    "PgtoPgIntgn",
+    "SteerDir",
+    "Beamformer",
+    "DeclineFactor",
+    "ArrayShading",
+    "SNC",
+    "CalbModeStatus",
+    "FilterReady"
+   ],
+   "depth": [
+    "DepthData"
+   ],
+   "heading_roll": [
+    "Roll",
+    "Azimuth"
+   ]
+  }
+ },
+ "w2353": {
+  "ports": {
+   "2345": [
+    {
+     "packetsize": 2365,
+     "ip": [
+      "236"
+     ],
+     "packetsource": "sonarconfig",
+     "packettype": "depth_heading_roll"
+    }
+   ]
+  },
+  "packets": {}
+ },
+ "ALTAS_V1": {
+  "ports": {
+   "55100": [
+    {
+     "packetsize": 1456,
+     "packetsource": "mainarray",
+     "packettype": "Acoustic",
+     "nPckt": 29,
+     "nNode": 9,
+     "nSamp": 80,
+     "nChann": 160
+    }
+   ],
+   "55200": [
+    {
+     "packetsize": 1456,
+     "packetsource": "lrarray",
+     "packettype": "Acoustic",
+     "nPckt": 16,
+     "nNode": 9,
+     "nSamp": 80,
+     "nChann": 160
+    }
+   ],
+   "55102": [
+    {
+     "packetsize": 37,
+     "ip": [
+      "3236430114"
+     ],
+     "packetsource": "mainarray",
+     "packettype": "depth"
+    },
+    {
+     "packetsize": 37,
+     "ip": [
+      "3236430112"
+     ],
+     "packetsource": "mainarray",
+     "packettype": "depth_heading_roll"
+    }
+   ],
+   "53037": [
+    {
+     "packetsizesize": 392,
+     "packetsource": "sonarconfig",
+     "packettype": "esi"
+    }
+   ],
+   "55202": [
+    {
+     "packetsizesize": 37,
+     "packetsource": "lrarray",
+     "packettype": "heading_roll"
+    }
+   ]
+  },
+  "packets": {},
+  "parameters": {}
+ },
+ "ALTAS_V2": {
+  "ports": {
+   "55100": [
+    {
+     "packetsize": 1456,
+     "packetsource": "mainarray",
+     "packettype": "Acoustic",
+     "nPckt": 29,
+     "nNode": 16,
+     "nSamp": 80,
+     "nChann": 160
+    }
+   ],
+   "55202": [
+    {
+     "packetsizesize": 37,
+     "packetsource": "mainarray",
+     "packettype": "depth"
+    }
+   ],
+   "55102": [
+    {
+     "packetsizesize": 37,
+     "packetsource": "mainarray",
+     "packettype": "depth_heading_roll"
+    }
+   ],
+   "55037": [
+    {
+     "packetsizesize": 392,
+     "packetsource": "sonarconfig",
+     "packettype": "esi"
+    }
+   ]
+  },
+  "packets": {
+   "metaheader": {
+    "fields": {
+     "PaidofLength": {
+      "datatype": "unsigned long",
+      "endianness": "little"
+     },
+     "Frequency": {
+      "datatype": "unsigned long long",
+      "endianness": "big"
+     }
+    }
+   }
+  },
+  "parameters": {
+   "metaheader": []
+  }
+ }
+}
